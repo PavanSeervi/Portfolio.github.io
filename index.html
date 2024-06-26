@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:site_name" content="Pavan Seervi"/>
+    <meta name="description" content="Pavan Seervi Personal Website"/>
+    <meta name="title" property="og:title" content="Pavan Seervi"/>
+    <meta property="og:type" content="Website"/>
+    <meta name="description" property="og:description" content="Pavan Seervi Personal Website"/>
+    <meta name="author" content="Pavan Seervi"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="Photo.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="Photo.jpg">
+    <link rel="icon" type="image/png" href="Photo.jpg">
+    <link rel="manifest" href="Photo.jpg">
+    <meta name="theme-color" content="#9bbdf9">
+    <title>Pavan Seervi - Aspiring Developer</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body> 
+    <div class="container">
+        <div class="row center-cell text-center">
+            <div class="col-md-6">
+                <h1 id="typed-text" class="text-4xl font-bold"></h1>
+
+                <div class="social-icons mt-4">
+                    <!-- Use larger and more modern social icons -->
+                    <a href="https://www.linkedin.com/in/pavan-seervi-b754a3205/" target="_blank">
+                        <img src="https://img.icons8.com/color/64/000000/linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/PavanSeervi" target="_blank">
+                        <img src="https://img.icons8.com/fluent/64/000000/github.png" alt="GitHub">
+                    </a>
+                    <a href="Pavan Seervi RESUME.pdf" target="_blank">
+                        <img src="https://img.icons8.com/fluent/64/000000/open-resume.png" alt="Resume">
+                    </a>
+                </div>
+                <!-- Add a CTA button -->
+                <button class="btn btn-primary mt-4" onclick="showContactModal()">Contact Me</button>
+            </div>
+            <div class="col-md-6">
+                <div class="circle mx-auto">
+                    <img src="Photo.jpg" alt="Pavan Seervi">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Contact Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="contactForm" onsubmit="submitForm(); return false;">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name<span class="required">*</span>:</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email<span class="required">*</span>:</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message<span class="required">*</span>:</label>
+                            <textarea class="form-control" id="message" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="suggestion" class="form-label">Any Suggestion<span class="required">*</span>:</label>
+                            <input type="text" class="form-control" id="suggestion">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rating Modal -->
+    <div class="modal fade" id="ratingModal" tabindex="-1" aria-labelledby="ratingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ratingModalLabel">Rate the Portfolio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>How would you rate my portfolio?</p>
+                    <!-- Add your rating stars or input here -->
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Awesome!">5 stars</label><br>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label><br>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Ok">3 stars</label><br>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Not great">2 stars</label><br>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Terrible">1 star</label><br>
+                    </div>
+                    <button type="button" class="btn btn-primary mt-3" onclick="submitRating()">Submit Rating</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <small>
+            Copyright © 2024 Pavan Seervi. All Rights Reserved.
+        </small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
