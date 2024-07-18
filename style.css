@@ -1,43 +1,103 @@
-/* Add a background image or gradient */
-body {
-    font-family: cursive;
-    background-image: linear-gradient(to bottom, #90C5F4, #00b4d8);
-    background-size: 100% 300px;
-    background-position: 0% 100%;
-    background-repeat: no-repeat; /* Ensures the background does not repeat */
+* {
+    .ibm-plex-sans-light {
+        font-family: "IBM Plex Sans", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    .ibm-plex-sans-regular {
+        font-family: "IBM Plex Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .ibm-plex-sans-medium-italic {
+        font-family: "IBM Plex Sans", sans-serif;
+        font-weight: 500;
+        font-style: italic;
+    }
 }
 
-/* CSS */
+body {
+    background-image: linear-gradient(to bottom, #90C5F4, #055C9D);
+    background-size: 100% 300px;
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+}
+
 .center-cell {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    flex-direction: column; /* Column direction for smaller screens */
+    flex-direction: column;
 }
 
 @media (min-width: 768px) {
     .center-cell {
-        flex-direction: row; /* Row direction for larger screens */
+        flex-direction: row;
     }
 }
 
-.circle img {
-    border-radius: 50%;
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+.circle {
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    width: 100%;
 }
 
+.profile-img {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(78, 62, 62, 0.2);
+}
+
+@media (max-width: 768px) {
+    .profile-img {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 380px) {
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+/* text */
 #typed-text {
-    font-family: cursive;
-    border-right: 2px solid #000;
-    white-space: nowrap;
-    overflow: hidden;
-    color: black; /* Ensure text is visible */
-    font-family: 'Open Sans', sans-serif;
-    font-size: 36px;
+    display: inline;
+    color: #5885AF;
+}
+
+.typed-cursor {
+    display: inline;
+    opacity: 1;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.animated-text {
+    color: #007bff;
 }
 
 .social-icons img {
@@ -48,10 +108,12 @@ body {
 
 .social-icons img:hover {
     transform: scale(1.2);
+    border-radius: 50%;
+    background-color: #478ec4;
 }
 
 .btn-primary {
-    background-color: #1d3557;
+    background-color: #295da2;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -60,16 +122,53 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #023e8a;
+    background-color: #545259;
     transition: 0.5s;
 }
 
-/* Required field indicator */
 .required {
     color: red;
 }
 
-/* footer */
+/* form title */
+.modal-title{
+    font-weight: 600;
+    font-size: larger;
+}
+
+
+/* Rating  */
+.rating {
+    display: flex;
+    justify-content: center;
+    direction: rtl; /* Adjusted for RTL layout */
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 2rem;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #f5b301; /* Adjusted color for active and hover states */
+}
+
+.rating input:checked + label:hover,
+.rating input:checked + label:hover ~ label,
+.rating input:checked ~ label:hover,
+.rating input:checked ~ label:hover ~ label,
+.rating label:hover ~ input:checked ~ label {
+    color: #f5b301;
+}
+
+
 footer {
     background-color: #ffffff;
     color: #000000;
@@ -78,5 +177,5 @@ footer {
 
 footer small {
     display: block;
-    margin-top: 10px;
+    margin-top: 12px;
 }
